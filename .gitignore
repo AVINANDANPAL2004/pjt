@@ -1,0 +1,41 @@
+.env
+.env.*
+!.env.example
+node_modules/
+web/node_modules/
+web/dist/
+web/crates/timbre_kit/pkg/
+api/_build/
+api/deps/
+api/priv/*.db
+api/priv/*.sqlite3
+*.db
+*.sqlite3
+*.wav
+*.mp3
+*.webm
+*.m4a
+
+.envrc
+
+# Local environment and secrets
+.envrc
+.env
+.env.*
+!.env.example
+
+# Generated files and local data
+node_modules/
+dist/
+_build/
+deps/
+*.db
+*.sqlite
+*.sqlite3
+*.wav
+*.mp3
+*.webm
+*.m4a
+
+# Temporary SQLite files
+api/.tmp/
