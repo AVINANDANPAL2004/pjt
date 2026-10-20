@@ -65,13 +65,12 @@ RUN mix compile
 RUN mix release
 
 # ==============================================================================
-# Stage 3: Minimal production runtime
+# Stage 3: Production runtime
 # ==============================================================================
-FROM debian:bookworm-slim AS runner
+FROM elixir:1.18-slim AS runner
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libsqlite3-0 \
-    libssl3 \
     ca-certificates \
     curl \
     && rm -rf /var/lib/apt/lists/*
