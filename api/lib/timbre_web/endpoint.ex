@@ -25,6 +25,7 @@ defmodule TimbreWeb.Endpoint do
     from: :timbre,
     gzip: not code_reloading?,
     only: TimbreWeb.static_paths(),
+    index: "index.html",
     raise_on_missing_only: code_reloading?
 
   # Code reloading can be explicitly enabled under the

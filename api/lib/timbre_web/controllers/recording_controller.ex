@@ -28,7 +28,7 @@ defmodule TimbreWeb.RecordingController do
          true <- size <= @max_bytes,
          true <- is_binary(extension) do
       id = Ecto.UUID.generate()
-      storage_dir = Path.expand("../../../.tmp/recordings", __DIR__)
+      storage_dir = System.get_env("RECORDINGS_PATH") || Path.expand("../../../.tmp/recordings", __DIR__)
       File.mkdir_p!(storage_dir)
       destination = Path.join(storage_dir, id <> extension)
 

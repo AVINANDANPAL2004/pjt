@@ -20,4 +20,9 @@ defmodule TimbreWeb.Router do
     get "/recordings/:id/audio", RecordingController, :audio
     delete "/recordings/:id", RecordingController, :delete
   end
+
+  scope "/", TimbreWeb do
+    get "/", PageController, :index
+    get "/*path", PageController, :index
+  end
 end

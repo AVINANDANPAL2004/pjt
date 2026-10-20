@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: timbre
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SECRET_KEY_BASE
+        generateValue: true
+      - key: PHX_SERVER
+        value: "true"
+      - key: DATABASE_PATH
+        value: /app/data/timbre.db
+      - key: RECORDINGS_PATH
+        value: /app/data/recordings
